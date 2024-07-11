@@ -25,6 +25,7 @@
     height: 400px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #container-side-img img {
@@ -49,4 +50,29 @@ img {
 
 .d-block {
     display: block;
+}
+
+button {
+    border-radius: 50%;
+    width: 20%;
+    background-color: rgb(228, 227, 227);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#caret-up {
+    position: absolute;
+    top: 10px;
+    right: 50%;
+    transform: translate(50%);
+    z-index: 1;
+}
+
+#caret-down {
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%);
+    z-index: 1;
 }

@@ -41,9 +41,7 @@ document.getElementById("caret-down").addEventListener("click", clickCaretDown)
 
 document.getElementById("caret-up").addEventListener("click", clickCaretUp);
 
-
-setInterval(clickCaretDown, 3000);
-
+document.getElementById("start").addEventListener("click", autoPlay)
 
 function clickCaretUp() {
     document.getElementById("img-" + active).classList.remove("active")
@@ -65,4 +63,8 @@ function clickCaretDown() {
     document.getElementById("main-img").innerHTML =
         `<img src="${images[active].image}"></img>
         <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
+}
+
+function autoPlay() {
+    setInterval(clickCaretDown, 3000)
 }

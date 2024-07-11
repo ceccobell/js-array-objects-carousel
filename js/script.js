@@ -38,22 +38,15 @@ let active_img = document.getElementById("img-" + active)
 active_img.classList.add("active")
 console.log(active_img)
 
-document.getElementById("caret-down").addEventListener("click", function () {
+document.getElementById("caret-down").addEventListener("click", clickCaretDown)
 
-    document.getElementById("img-" + active).classList.remove("active")
-    active = (active + 1) % images.length
-    document.getElementById("img-" + active).classList.add("active")
+document.getElementById("caret-up").addEventListener("click", clickCaretUp);
 
-    document.getElementById("main-img").innerHTML = ""
-    document.getElementById("main-img").innerHTML =
-        `<img src="${images[active].image}"></img>
-        <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
 
-    console.log("active ora vale:", active)
-});
+setInterval(clickCaretDown, 3000);
 
-document.getElementById("caret-up").addEventListener("click", function () {
 
+function clickCaretUp() {
     document.getElementById("img-" + active).classList.remove("active")
     active = (active - 1 + images.length) % images.length
     document.getElementById("img-" + active).classList.add("active")
@@ -64,4 +57,17 @@ document.getElementById("caret-up").addEventListener("click", function () {
         <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
 
     console.log("active ora vale:", active);
-});
+}
+
+function clickCaretDown() {
+    document.getElementById("img-" + active).classList.remove("active")
+    active = (active + 1) % images.length
+    document.getElementById("img-" + active).classList.add("active")
+
+    document.getElementById("main-img").innerHTML = ""
+    document.getElementById("main-img").innerHTML =
+        `<img src="${images[active].image}"></img>
+        <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
+
+    console.log("active ora vale:", active)
+}

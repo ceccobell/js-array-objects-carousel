@@ -43,6 +43,8 @@ document.getElementById("caret-up").addEventListener("click", clickCaretUp);
 
 document.getElementById("start").addEventListener("click", autoPlay)
 
+document.getElementById("stop").addEventListener("click", removeAutoPlay)
+
 function clickCaretUp() {
     document.getElementById("img-" + active).classList.remove("active")
     active = (active - 1 + images.length) % images.length
@@ -65,6 +67,12 @@ function clickCaretDown() {
         <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
 }
 
+let autoplayInterval = 0;
+
 function autoPlay() {
-    setInterval(clickCaretDown, 3000)
+    autoplayInterval = setInterval(clickCaretDown, 3000);
+}
+
+function removeAutoPlay() {
+    clearInterval(autoplayInterval);
 }

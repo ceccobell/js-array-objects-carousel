@@ -22,4 +22,8 @@ const images = [
     }
 ]
 
-document.getElementById("main-img").innerHTML = `<img src="${images[0].image}"></img>` 
+document.getElementById("main-img").innerHTML = `<img src="${images[0].image}"></img>`
+
+for (let i = 0; i < images.length; i++) {
+    document.getElementById("container-side-img").innerHTML += `<img src="${images[i].image}"></img>`
+}

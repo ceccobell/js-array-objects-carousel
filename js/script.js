@@ -26,7 +26,7 @@ const images = [
     }
 ]
 
-document.getElementById("main-img").innerHTML = `<img src="${images[0].image}"></img>`
+document.getElementById("main-img").innerHTML = `<img src="${images[0].image}"></img><div class="p-abs"><h2>${images[0].title}</h2><div>${images[0].text}</div></div>`
 
 
 for (let i = 0; i < images.length; i++) {
@@ -39,21 +39,29 @@ active_img.classList.add("active")
 console.log(active_img)
 
 document.getElementById("caret-down").addEventListener("click", function () {
-    let prev_active = active;
-    active = (active + 1) % images.length;
 
-    document.getElementById("img-" + prev_active).classList.remove("active");
-    document.getElementById("img-" + active).classList.add("active");
+    document.getElementById("img-" + active).classList.remove("active")
+    active = (active + 1) % images.length
+    document.getElementById("img-" + active).classList.add("active")
 
-    console.log("active ora vale:", active);
+    document.getElementById("main-img").innerHTML = ""
+    document.getElementById("main-img").innerHTML =
+        `<img src="${images[active].image}"></img>
+        <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
+
+    console.log("active ora vale:", active)
 });
 
 document.getElementById("caret-up").addEventListener("click", function () {
-    let prev_active = active;
-    active = (active - 1 + images.length) % images.length;
 
-    document.getElementById("img-" + prev_active).classList.remove("active");
-    document.getElementById("img-" + active).classList.add("active");
+    document.getElementById("img-" + active).classList.remove("active")
+    active = (active - 1 + images.length) % images.length
+    document.getElementById("img-" + active).classList.add("active")
+
+    document.getElementById("main-img").innerHTML = ""
+    document.getElementById("main-img").innerHTML =
+        `<img src="${images[active].image}"></img>
+        <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
 
     console.log("active ora vale:", active);
 });

@@ -18,6 +18,7 @@
 #main-img {
     width: 80%;
     height: 400px;
+    position: relative;
 }
 
 #container-side-img {
@@ -75,4 +76,12 @@ button {
     right: 50%;
     transform: translate(50%);
     z-index: 1;
+}
+
+.p-abs {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    text-align: right;
 }

@@ -36,7 +36,6 @@ for (let i = 0; i < images.length; i++) {
 let active = 0
 let active_img = document.getElementById("img-" + active)
 active_img.classList.add("active")
-console.log(active_img)
 
 document.getElementById("caret-down").addEventListener("click", clickCaretDown)
 
@@ -55,8 +54,6 @@ function clickCaretUp() {
     document.getElementById("main-img").innerHTML =
         `<img src="${images[active].image}"></img>
         <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
-
-    console.log("active ora vale:", active);
 }
 
 function clickCaretDown() {
@@ -68,6 +65,4 @@ function clickCaretDown() {
     document.getElementById("main-img").innerHTML =
         `<img src="${images[active].image}"></img>
         <div class="p-abs"><h2>${images[active].title}</h2><div>${images[active].text}</div></div>`
-
-    console.log("active ora vale:", active)
 }
